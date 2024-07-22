@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace _9._2.Entity
 {
-    internal class Category
+    public class Category
     {
-        int id { get; set; }
-        string name { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
 
-        public static List<Good> products { get; set; }
+        public List<Good> products { get; set; }
 
         public Category (string name) 
         {
@@ -22,7 +22,7 @@ namespace _9._2.Entity
             
         }
 
-        public void ShowGoods(List<Good> elements) {
+        public void ShowGoods() {
             for (int i=0; i < products.Count; i++)
                 Console.WriteLine(products[i].GetName(products[i]));
         }

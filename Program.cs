@@ -31,14 +31,13 @@ namespace _9._2
             toysCategory.AddGoods(doll);
             toysCategory.AddGoods(duck);
 
-            toysCategory.ShowGoods(products);
+            toysCategory.ShowGoods();
 
-            string relPath = "../../Files/SaveCategory.json";
+            string relPath = "../../SaveCategory.json";
 
             SaveToFile saveToFile = new SaveToFile(relPath);
-            saveToFile.save(doll);
+            //saveToFile.save(doll);
             saveToFile.save(toysCategory);
-            
         }
     }
 }

@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace _9._2.Entity
 {
-    internal class Good
+    public class Good
     {
-        int id { get; set; }
-        string name { get; set; }
-        double price { get; set; }
-        string link { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public double price { get; set; }
+        public string link { get; set; }
 
         public Good(string name, double price) {
             id = (new Random()).Next(1, 1000);
+            System.Threading.Thread.Sleep(1000);
             this.name = name;
             this.price = price;
         }

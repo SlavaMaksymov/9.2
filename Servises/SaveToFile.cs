@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
@@ -16,12 +17,12 @@ namespace _9._2.Servises
         private string path = string.Empty;
         public SaveToFile(string path) 
         {
-            this .path = path;
+            this.path = path;
         }
 
         public void save(Category category) 
         {
-            using (StreamWriter streamWriter = new StreamWriter(this.path, true))
+            using (StreamWriter streamWriter = new StreamWriter(this.path, false))
             {
                 string json = JsonSerializer.Serialize(category);
                 streamWriter.WriteLine(json);
@@ -31,7 +32,7 @@ namespace _9._2.Servises
 
         public void save(Good good)
         {
-            using (StreamWriter streamWriter = new StreamWriter(this.path, true))
+            using (StreamWriter streamWriter = new StreamWriter(this.path, false))
             {
                 string json = JsonSerializer.Serialize(good);
                 streamWriter.WriteLine(json);
@@ -39,6 +40,8 @@ namespace _9._2.Servises
 
         }
 
+        public void save(string text)
+        { }
 
         public Category load()
 
