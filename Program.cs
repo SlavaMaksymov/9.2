@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +18,27 @@ namespace _9._2
 
         {
             Category toysCategory = new Category("toys");
+            List<Good> products = new List<Good>();
 
             Good ball = new Good("ball", 300);
 
-            
+            Good doll = new Good("doll", 400);
 
+            Good duck = new Good("duck", 50);
+
+
+            toysCategory.AddGoods(ball);
+            toysCategory.AddGoods(doll);
+            toysCategory.AddGoods(duck);
+
+            toysCategory.ShowGoods(products);
+
+            string relPath = "../../Files/SaveCategory.json";
+
+            SaveToFile saveToFile = new SaveToFile(relPath);
+            saveToFile.save(doll);
+            saveToFile.save(toysCategory);
+            
         }
     }
 }
